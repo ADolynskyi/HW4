@@ -20,11 +20,8 @@ public class App {
 
         LogManager.getRootLogger().setLevel(Level.INFO);
         MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
-
         StandardMBean mBean = new StandardMBean(new MyMBeanImpl(), MyMBean.class);
-
         ObjectName mBeanName = new ObjectName("com.example:type=MyBean");
-
         mbs.registerMBean(mBean, mBeanName);
 
         while (true) {
@@ -49,7 +46,7 @@ public class App {
         return string;
     }
 
-    private static String stringConverter(String string) {
+    public static String stringConverter(String string) {
         char[] ch = string.toCharArray();
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < ch.length; i++) {

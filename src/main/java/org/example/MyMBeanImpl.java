@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 
 public class MyMBeanImpl implements MyMBean {
     private static final Logger logger = Logger.getLogger(MyMBeanImpl.class);
+
     @Override
     public void changeLogLevelInfo() {
         LogManager.getRootLogger().
@@ -14,6 +15,7 @@ public class MyMBeanImpl implements MyMBean {
 
         logger.info("Change log level to DEBUG");
     }
+
     @Override
     public void changeLogLevelDebug() {
         LogManager.getRootLogger().
